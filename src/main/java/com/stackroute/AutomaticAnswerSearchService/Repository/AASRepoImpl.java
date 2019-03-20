@@ -14,6 +14,7 @@ public class AASRepoImpl implements AASRepo {
 
     private RedisTemplate<List<Items>, Items> redisTemplate;
 
+
     private HashOperations hashOperations;
 
     public AASRepoImpl(RedisTemplate<List<Items>, Items> redisTemplate) {
@@ -26,7 +27,8 @@ public class AASRepoImpl implements AASRepo {
     @Override
     public void save(List<Question> question) {
 
-        hashOperations.put("ITEMS", question, question);
+
+        hashOperations.put("APPLE", question, question);
 
 
     }
@@ -34,7 +36,7 @@ public class AASRepoImpl implements AASRepo {
 
     @Override
     public List<Question> findAll() {
-        return hashOperations.values("ITEMS");
+        return hashOperations.values("APPLE");
     }
 
 

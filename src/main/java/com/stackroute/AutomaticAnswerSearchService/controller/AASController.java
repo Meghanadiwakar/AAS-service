@@ -35,18 +35,7 @@ public class AASController {
     public ResponseEntity<?> getAllData() {
         ResponseEntity responseEntity;
         try {
-            /*
-            *   private int questionId;
-    private String question;
-    private String description;
-    private List<String> topics;
-    private int upvotes;
-    private long timestamp;
-    private int downvotes;
-    User user;
-    List<Comment> comment;
-    List<Answer> answer;
-            * */
+
 
             List<com.stackroute.StackOverflowAdaptor.domain.Items> itemsList = apiservice.getData();
             System.out.println("got the data" + itemsList);
@@ -67,6 +56,7 @@ public class AASController {
                 Answer answer = new Answer();
                 answer.setAnswer(itemsList.get(i).getLink());
                 answers.add(answer);
+
                 question.setAnswer(answers);
                 questions.add(question);
             }

@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Data
@@ -13,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @Document
-public class Comment {
+public class Comment implements Serializable {
     User user;
     List<Replies> replies;
     private String comment;
