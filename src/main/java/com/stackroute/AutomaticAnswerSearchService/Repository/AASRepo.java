@@ -4,9 +4,9 @@ import java.util.List;
 
 public interface AASRepo {
 
-    void save(List<com.stackroute.StackOverflowDb.domain.Items> items);
+    void save(List<com.stackroute.StackOverflowAdaptor.domain.Items> items);
 
-    List<com.stackroute.StackOverflowDb.domain.Items> findAll();
+    List<com.stackroute.StackOverflowAdaptor.domain.Items> findAll();
 
 
 }

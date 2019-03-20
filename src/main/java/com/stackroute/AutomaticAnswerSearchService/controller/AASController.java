@@ -2,7 +2,7 @@ package com.stackroute.AutomaticAnswerSearchService.controller;
 
 
 import com.stackroute.AutomaticAnswerSearchService.Repository.AASRepo;
-import com.stackroute.StackOverflowDb.service.APIservice;
+import com.stackroute.StackOverflowAdaptor.service.APIservice;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -32,7 +32,7 @@ public class AASController {
         ResponseEntity responseEntity;
         try {
 
-            List<com.stackroute.StackOverflowDb.domain.Items> itemsList = apiservice.getData();
+            List<com.stackroute.StackOverflowAdaptor.domain.Items> itemsList = apiservice.getData();
             System.out.println("got the data" + itemsList);
 
 
@@ -46,7 +46,7 @@ public class AASController {
     }
 
     @GetMapping("/all")
-    public List<com.stackroute.StackOverflowDb.domain.Items> all() {
+    public List<com.stackroute.StackOverflowAdaptor.domain.Items> all() {
         return aasRepo.findAll();
     }
 

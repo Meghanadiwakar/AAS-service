@@ -15,7 +15,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import java.util.List;
 
 @EnableAutoConfiguration
-@ComponentScan({"com.stackroute.AutomaticAnswerSearchService", "com.stackroute.StackOverflowDb"})
+@ComponentScan({"com.stackroute.AutomaticAnswerSearchService", "com.stackroute.StackOverflowAdaptor"})
 @Configuration
 @EnableCaching
 @EnableScheduling

@@ -23,7 +23,7 @@ public class AASRepoImpl implements AASRepo {
 
 
     @Override
-    public void save(List<com.stackroute.StackOverflowDb.domain.Items> items) {
+    public void save(List<com.stackroute.StackOverflowAdaptor.domain.Items> items) {
 
         hashOperations.put("ITEMS", items, items);
 
@@ -32,7 +32,7 @@ public class AASRepoImpl implements AASRepo {
 
 
     @Override
-    public List<com.stackroute.StackOverflowDb.domain.Items> findAll() {
+    public List<com.stackroute.StackOverflowAdaptor.domain.Items> findAll() {
         return hashOperations.values("ITEMS");
     }
 
