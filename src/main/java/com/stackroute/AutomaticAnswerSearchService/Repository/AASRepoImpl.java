@@ -2,6 +2,7 @@ package com.stackroute.AutomaticAnswerSearchService.Repository;
 
 
 import com.stackroute.AutomaticAnswerSearchService.model.Items;
+import com.stackroute.AutomaticAnswerSearchService.model.Question;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
@@ -23,18 +24,27 @@ public class AASRepoImpl implements AASRepo {
 
 
     @Override
-    public void save(List<com.stackroute.StackOverflowAdaptor.domain.Items> items) {
+    public void save(List<Question> question) {
 
-        hashOperations.put("ITEMS", items, items);
+        hashOperations.put("ITEMS", question, question);
 
 
     }
 
 
     @Override
-    public List<com.stackroute.StackOverflowAdaptor.domain.Items> findAll() {
+    public List<Question> findAll() {
         return hashOperations.values("ITEMS");
     }
+
+
+    @Override
+    public List<Question> findById(long question_id) {
+        return (List<Question>) hashOperations.get("ITEMS", question_id);
+    }
+
+
+
 
 
 }
